@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // print the max and min numbers out of given 5 numbers
+      i = 1;
+      let num = parseInt(prompt("enter number here : "));
+      let min_num = num;
+      let max_num = num;
+      while (i <= 4) {
+        let num_2 = parseInt(prompt("enter number here : "));
+        if (num_2 > max_num) {
+          max_num = num_2;
+        }
+        if (num_2 < min_num) {
+          min_num = num_2;
+        }
+        i++;
+      }
+      console.log("max number :" + max_num);
+      console.log("minimum number :" + min_num);
+    </script>
+  </body>
+</html>
