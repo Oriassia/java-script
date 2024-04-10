@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function count_identicals(array_1, array_2) {
+        singles_array = new Set(array_1); // ignore the duplicates in one of the arrays
+        let identicals_counter = 0;
+        for (let i of singles_array) {
+          // run on main array
+          for (let j of array_2) {
+            // run on second array
+            if (i == j) {
+              identicals_counter++;
+              break;
+            }
+          }
+        }
+        return identicals_counter;
+      }
+
+      array_test_1 = [1, 2, 3, 4, 5, 6];
+      array_test_2 = [1, 2, 3, 4, 5, 4];
+      console.log(count_identicals(array_test_1, array_test_2));
+    </script>
+  </body>
+</html>

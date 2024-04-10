@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function unique_numbers(array) {
+        unique_array = [];
+        for (let i of array) {
+          // run on each number
+          let counter = 0;
+          for (let j of array) {
+            // run on all the array from the start
+            if (i == j) {
+              counter++; // countes the dups
+            }
+          }
+          if (counter == 1) {
+            // if only one duplicate was found (means only one number exist)
+            unique_array.push(i); // insert the unique num to the new array
+          }
+        }
+        return unique_array;
+      }
+
+      test_array = [1, 2, 3, 4, 1, 2, 3, 5, 6];
+      console.log(unique_numbers(test_array));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function if_num_exist(array, num) {
+        for (let i of array) {
+          if (num == i) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      let array = [1, 2, 3, 4, 5];
+      console.log(if_num_exist(array, 5));
+    </script>
+  </body>
+</html>

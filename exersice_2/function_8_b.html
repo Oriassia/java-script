@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function digits_sum(num) {
+        let sum = 0;
+        while (true) {
+          if (num > 10) {
+            let rest = num % 10;
+            sum += rest;
+            num = Math.floor(num / 10);
+          } else {
+            sum += num;
+            return sum;
+          }
+        }
+      }
+
+      console.log(digits_sum(1111));
+    </script>
+  </body>
+</html>
