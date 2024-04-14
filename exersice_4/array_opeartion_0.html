@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const book1 = {
+        name: "a",
+        pages: "10",
+      };
+      const book2 = {
+        name: "b",
+        pages: "20",
+      };
+      const book3 = {
+        name: "c",
+        pages: "30",
+      };
+      const book4 = {
+        name: "d",
+        pages: "40",
+      };
+      const book5 = {
+        name: "e",
+        pages: "50",
+      };
+
+      const books = [book1, book2, book3, book4, book5];
+      add_books(books, "harry potter", 500);
+      books.pop("harry potter");
+      console.log(books);
+
+      //----------------------------------------------
+
+      function add_books(books_array, book_name, page_num) {
+        let new_book = { name: book_name, pages: page_num };
+        books_array.push(new_book);
+      }
+
+      //   add_books(books, "harry potter", 500);
+      //   console.log(books);
+
+      //--------------------------------------------
+
+      function get_book(array, book_name) {
+        for (let i of array) {
+          if (i.name == book_name) {
+            // i = {name:harry,pages:500}
+            return i;
+          }
+        }
+      }
+      //   console.log(get_book(books, "harry potter"));
+      //-----------------------------
+      function updateBookPages(array, book_name, page_num) {
+        for (let i of array) {
+          if (i.name == book_name) {
+            i.pages = page_num;
+            return i;
+          }
+        }
+        return null;
+      }
+
+      //--------------------------
+    </script>
+  </body>
+</html>

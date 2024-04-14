@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [2, 3, 4, 3, 6];
+      console.log(num_in_arr());
+
+      function num_in_arr() {
+        let num = prompt("enter number here : ");
+        let is_found;
+        for (let i in array) {
+          if (array[i] == num) {
+            array[i]++;
+            is_found = true;
+          }
+        }
+        if (is_found == true) {
+          return array;
+        } else {
+          return "number not found";
+        }
+      }
+    </script>
+  </body>
+</html>
