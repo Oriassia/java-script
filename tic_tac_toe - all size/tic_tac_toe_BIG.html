@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="tic_tac_toe.js"></script>
+    <!-- link to js file -->
+
+    <script>
+      let current_player = ""; // first player statment
+      let game_running = true;
+      let main_game = true;
+      let x_player = "";
+      let O_player = "";
+      let turns_counter = null;
+      let gameBoard = null; // game board creation by num input
+      let size = null;
+      let history_array = [];
+
+      while (main_game) {
+        let action = prompt(
+          "Welcome to Tic-Tac-Toe, \nstart a new game - 1 \nview games history - 2 \nquit - 3 "
+        );
+
+        if (action == "1") {
+          start_game();
+        } else if (action == "2") {
+          alert(get_history_array());
+        } else if (action == "3") {
+          alert("Goodby !");
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>
