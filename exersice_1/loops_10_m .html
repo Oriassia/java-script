@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // doesnt work !!!!!!!!!!!!!!
+
+      // 10) print every digit of a given number, start from left.
+
+      // divisor growth
+      function multiply_10(i) {
+        return i * 10;
+      }
+
+      var num = Number(prompt("enter number here :"));
+      var divisor = 10;
+
+      while (divisor > 1) {
+        let left_digit = Math.floor(num / divisor);
+        if (left_digit < 10) {
+          console.log(left_digit);
+          num %= divisor;
+          divisor /= 10;
+        } else {
+          divisor = multiply_10(divisor);
+        }
+        console.log(num);
+      }
+
+      //chat gpt solution
+
+      //   let x = prompt("enter number here :");
+      //   let temp = x;
+      //   let divisor = 1;
+
+      //   // Find the divisor to get the leftmost digit
+      //   while (temp >= 10) {
+      //     temp /= 10;
+      //     divisor *= 10;
+      //   }
+
+      //   // Extract and print each digit starting from the left
+      //   while (divisor >= 1) {
+      //     let digit = Math.floor(x / divisor);
+      //     console.log(digit);
+      //     x %= divisor;
+      //     divisor /= 10;
+      //   }
+      //
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1)
+      function avg_age(array) {
+        let sum;
+        for (let i of array) {
+          sum += i.age;
+        }
+        return sum / array.length;
+      }
+
+      // 2)
+      function highest_age(array) {
+        let result = { age: 0, index: 0, name: 0 };
+        for (let i in array) {
+          if (array[i].age > result.age) {
+            result.age = array[i].age;
+            result.index = i;
+            result.name = array[i].name;
+          }
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

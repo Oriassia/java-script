@@ -13,6 +13,8 @@
         mainArray = randomNumbersArray();
         console.log(mainArray);
         document.querySelector("#give_up").innerText = null
+        document.querySelector("#turns_history").innerText = "turns history :"
+    
       }
 
       function goAction() {
@@ -30,8 +32,8 @@
         else{
             addArrayToHistory(inputArray);
             arrays_check();
-            elemBulls.innerText = `bulls :\n ${bulls}`;
-            elemCows.innerText = `cows : \n ${cows}`;
+            elemBulls.innerText += `\n ${bulls}`;
+            elemCows.innerText += `\n ${cows}`;
             document.querySelector("#wrong_input").innerText = null
         }
       }

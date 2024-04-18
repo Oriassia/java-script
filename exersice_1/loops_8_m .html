@@ -7,12 +7,22 @@
   </head>
   <body>
     <script>
-      // print the max and min numbers out of given 5 numbers
-      i = 1;
+      // 5) claculate 1*2*3*4... due to given number using do while
+      // let sum = 1;
+      // let i = parseInt(prompt("enter number here :"));
+      // do {
+      //   sum *= i;
+      //   i--;
+      // } while (i > 0 || i < 0);
+      // console.log(sum);
+
+      // 6) print the max and min numbers out of given 5 numbers using do while
+      let i = 1;
       let num = parseInt(prompt("enter number here : "));
       let min_num = num;
       let max_num = num;
-      while (i <= 4) {
+      do {
+        i++;
         let num_2 = parseInt(prompt("enter number here : "));
         if (num_2 > max_num) {
           max_num = num_2;
@@ -20,8 +30,7 @@
         if (num_2 < min_num) {
           min_num = num_2;
         }
-        i++;
-      }
+      } while (i < 4);
       console.log("max number :" + max_num);
       console.log("minimum number :" + min_num);
     </script>

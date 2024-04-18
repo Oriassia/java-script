@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 9) print the highest and lowest number from n given numbers, the function stops if given 0 or negative num.
+      let max_num = null;
+      let min_num = null;
+      while (true) {
+        let num = prompt("enter number here :");
+        if (min_num == null || max_num == null) {
+          min_num = num;
+          max_num = num;
+        }
+        if (num == 0 || num < 0) {
+          break;
+        }
+        if (num > max_num) {
+          max_num = num;
+        }
+        if (num < min_num) {
+          min_num = num;
+        }
+      }
+      console.log("max number is :" + max_num);
+      console.log("min number is :" + min_num);
+    </script>
+  </body>
+</html>

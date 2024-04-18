@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+}
+
+.page {
+  padding: 30px;
+}
+.headline {
+  padding-inline: 15px;
+  padding-block: 10px;
+  color: white;
+  background-color: #04aa6d;
+  border-radius: 5px;
+}
+
+li {
+  background-color: #f1f1f1;
+  margin-block: 5px;
+  border-radius: 3px;
+  padding-block: 2px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
