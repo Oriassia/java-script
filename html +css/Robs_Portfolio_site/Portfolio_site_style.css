@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+.page-container {
+  text-align: center;
+}
+
+header {
+  background-color: #1c0c35;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-block: 18px;
+}
+
+.content-container {
+  background-color: #8f33e1;
+  display: grid;
+  place-items: center;
+
+  gap: 50px;
+  /* padding-inline: 50px; */
+}
+
+.opening {
+  padding-inline: 50px;
+}
+
+.opening img {
+  border-radius: 300px;
+  max-width: 450px;
+  margin-top: 70px;
+  margin-bottom: 25px;
+}
+
+.about-card {
+  background-color: #ffffff;
+  padding-block: 50px;
+  margin-inline: 30px;
+  margin-bottom: 15px;
+  max-width: 1000px;
+  /* justify-content: center; */
+}
+
+.about-head {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 36px;
+}
+.about-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  padding-inline: 40px;
+}
+
+.about-content-container img {
+  min-width: 400px;
+}
+
+.about-text-container {
+  align-content: center;
+  width: 380px;
+}
+
+.about-text-container p {
+  font-size: 19px;
+  text-align: start;
+}
+
+.projects-header {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.projects-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  background-color: #3a3a6c;
+  padding-block: 30px;
+  color: white;
+  width: 100%;
+}
+.contact-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+  margin-inline: auto;
+  text-align: start;
+  column-gap: 70px;
+  margin-top: 20px;
+}
+
+.contact-user-inputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: 200px;
+}
+
+label {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.contact-wrapper input {
+  background-color: #fff;
+  padding: 0.5rem;
+  padding-right: 3rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 10px;
+}
+
+textarea {
+  min-width: 300px;
+  max-width: 300px;
+  border-radius: 5px;
+  overflow: auto;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.contact-message-input button {
+  color: #1d3d5f;
+  border: 0;
+  border-radius: 5px;
+  width: 140px;
+  height: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
+.contact-message-input button:hover {
+  color: white;
+  background-color: #000;
+}
+
+footer {
+  background-color: #1c0c35;
+  color: white;
+  padding-block: 30px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 600px;
+  margin-inline: auto;
+}
+
+.book {
+  position: relative;
+  border-radius: 10px;
+  width: 350px;
+  height: 300px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+  overflow: hidden;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+.cover img {
+  max-width: 100%;
+}
+
+.cover-text {
+  position: absolute;
+  bottom: 15px; /* Adjust the top value to position the text vertically */
+  left: 15px; /* Adjust the left value to position the text horizontally */
+  color: white; /* Set the text color */
+  font-size: 30px; /* Adjust the font size as needed */
+  font-weight: bold; /* Set the font weight */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Add a text shadow for better visibility */
+}
+
+.inner-page {
+  margin-left: 45px;
+  font-size: 25px;
+}
+
+.inner-page button {
+  font-size: 18px;
+  padding: 8px;
+}
