@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  width: 300px;
+}
+.grid-item {
+  background-color: #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  min-height: 40px;
+}
+
+.hidden {
+  text-indent: -9999px;
+  box-shadow: 3px 3px 3px;
+}

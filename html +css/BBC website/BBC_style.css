@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+
+.category-nav {
+  display: flex;
+  gap: 10px;
+  width: 1000px;
+  margin-inline: auto;
+}
+
+.category-nav .category {
+  border-right: 1px solid gray;
+  padding-right: 12px;
+  padding-top: 7px;
+}
+
+.search-bar {
+  width: 1000px;
+  margin-inline: auto;
+}
+
+.news-bar-container {
+  color: white;
+  width: 100%;
+  background-color: #ba1919;
+  height: 70px;
+}
+
+.news-bar {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  justify-content: space-between;
+  width: 1000px;
+  margin-inline: auto;
+}
+
+.main-nav-container {
+  width: 100%;
+  background-color: #a91717;
+}
+
+.main-nav {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 1000px;
+  margin-inline: auto;
+  height: 40px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.category-headline {
+  width: 1000px;
+  margin-inline: auto;
+  margin-top: 10px;
+}
+
+.category-headline h3 {
+  border-bottom: 2px solid #ba1919; /* Add an underline */
+  padding-bottom: 5px; /* Increase the space between text and underline */
+  display: inline;
+  padding-inline: 3px;
+}
+
+.main-content-wrapper {
+  width: 1000px;
+  margin-inline: auto;
+  margin-top: 10px;
+  display: flex;
+}
+
+.article-content {
+  display: flex;
+}
+
+.article-headline {
+  margin-bottom: 10px;
+}
+
+.article-wrapper {
+  border-right: 1px solid #cccccc;
+  padding-right: 20px;
+}
+
+img {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.article-text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  gap: 10px;
+}
+
+.date-and-category {
+  display: flex;
+  gap: 1rem;
+}
+
+.date-and-category .date {
+  border-right: 1px solid gray;
+  padding-right: 20px;
+}
+
+.date-and-category .date img {
+  width: 15px;
+  margin: 0;
+}
+
+.article-border {
+  color: #a91717;
+  margin-bottom: 8px;
+}
+
+.watch-listen-wrapper {
+  margin-left: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card-wrapper {
+  display: flex;
+  font-size: 18px;
+}
+
+.card-wrapper img {
+  width: 90px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.text-container {
+  width: 180px;
+}
+
+.text-container img {
+  width: 20px;
+  padding-top: 5px;
+  margin: 0;
+}
