@@ -7,8 +7,34 @@
     <link rel="stylesheet" href="minesweeper_style.css" />
   </head>
   <body>
-    <button onclick="createboard()">start new game</button>
-    <div class="grid" id="myGrid"></div>
+    <div class="page-wrapper">
+      <div class="game-wrapper">
+        <div class="opening-page">
+          <div class="opening-text">
+            <h1>Welcome to Minesweeper</h1>
+            <p>
+              Find all hidden bombs in the board, <br />play with the mouse:
+              <br />Left click - open cell <br />Right click - mark as bomb
+            </p>
+          </div>
+          <br />
+          <div class="opening-buttons">
+            <button onclick="createboard();showPageSwitch();">
+              start new game
+            </button>
+          </div>
+        </div>
+
+        <div class="game-page hidden-page">
+          <div class="grid" id="myGrid"></div>
+          <div class="game-buttons">
+            <button onclick="showPageSwitch()">Restart game</button>
+            <button onclick="startTimer()" id="timer-btn">Start timer:</button>
+            <button id="bombs-counter">remain bombs :</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--  -->
     <script src="./minesweeper-script.js"></script>
   </body>
