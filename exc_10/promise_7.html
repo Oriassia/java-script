@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Promise Example</h1>
+    <p id="sum"></p>
+
+    <script>
+      let sum = 0;
+      axios
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => {
+          console.log(response.data.length);
+          sum += response.data.length;
+
+          return axios
+            .get("https://jsonplaceholder.typicode.com/users")
+            .then((response) => {
+              console.log(response.data.length);
+              sum += response.data.length;
+
+              return axios
+                .get("https://jsonplaceholder.typicode.com/comments")
+                .then((response) => {
+                  console.log(response.data.length);
+                  sum += response.data.length;
+                  document.getElementById("sum").innerText = sum;
+                });
+            });
+        });
+    </script>
+  </body>
+</html>

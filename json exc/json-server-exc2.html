@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="title" type="text" placeholder="Enter title" />
+    <input id="views" type="number" placeholder="Enter views amount" />
+    <button onclick="preventDefault();postToServer()">Post Data</button>
+
+    <input
+      id="delete-id"
+      type="number"
+      placeholder="Enter posts' id to delete"
+    />
+    <button onclick="deleteFromServer()">Delete</button>
+    <p></p>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const url = "http://localhost:8001/posts";
+
+      let counter = localStorage.getItem("id-counter") ?? 3;
+
+      function postToServer() {
+        let titleInput = document.getElementById("title");
+        let viewsInput = document.getElementById("views");
+
+        axios.post(url, {
+          id: counter.toString(),
+          title: titleInput.value,
+          views: Number(viewsInput.value),
+        });
+        counter++;
+        localStorage.setItem("id-counter", counter);
+        document.querySelector("p").textContent = "Success";
+      }
+
+      function deleteFromServer() {
+        let deleteId = document.getElementById("delete-id").value;
+        axios.delete(`${url}/${deleteId}`);
+      }
+
+      function preventDefault(event) {
+        event.preventDefault();
+      }
+    </script>
+  </body>
+</html>

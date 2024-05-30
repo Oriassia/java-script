@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(rewriteSortArray([4, 3, 2, 1, 8]));
+
+      function rewriteSortArray(item) {
+        for (let i = 0; i < item.length; i++) {
+          for (let j = i + 1; j < item.length; j++) {
+            if (item[j] < item[i]) {
+              [item[i], item[j]] = [item[j], item[i]];
+              console.log(item);
+              i--;
+              break;
+            }
+          }
+        }
+        return item;
+      }
+    </script>
+  </body>
+</html>

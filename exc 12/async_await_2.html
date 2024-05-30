@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function pause(sleepMs) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, sleepMs);
+        });
+      }
+
+      const f1 = () => console.log("f1 called");
+      const f2 = () => console.log("f2 called");
+      const f3 = () => console.log("f3 called");
+
+      async function print() {
+        f1();
+        await pause(3000);
+        f2();
+        await pause(5000);
+        f3();
+        await pause(7000);
+      }
+      print();
+    </script>
+  </body>
+</html>

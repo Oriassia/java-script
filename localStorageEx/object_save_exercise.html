@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="insertToStorage()">save</button>
+    <button onclick="getStorage()">read</button>
+    <button onclick="localStorage.clear()">clear storage</button>
+    <p id="text"></p>
+    <script>
+      let bookObj = { name: "ori", pages: "200" };
+      function insertToStorage() {
+        let stringObj = JSON.stringify(bookObj);
+        localStorage.setItem("book_1", stringObj);
+      }
+
+      function getStorage() {
+        let book_1_string = localStorage.getItem("book_1");
+        let Obj = JSON.parse(book_1_string);
+        document.getElementById(
+          "text"
+        ).innerText = `Name: ${Obj.name}, Pages: ${Obj.pages}`;
+      }
+
+      let counter;
+      if (localStorage.getItem("storageCounter") !== null) {
+        counter = localStorage.getItem("storageCounter");
+      } else {
+        counter = 0;
+      }
+    </script>
+  </body>
+</html>

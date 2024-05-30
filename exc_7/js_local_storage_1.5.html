@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="localStorage.clear()">clear storage</button>
+    <button id="counter_button1" onclick="counterPlus(this)">0</button>
+    <button id="counter_button2" onclick="counterPlus(this)">0</button>
+
+    <script>
+      // check if exist local storage
+      if (localStorage.getItem("counter_button1") !== null) {
+        document.getElementById("counter_button1").innerText =
+          localStorage.getItem("counter_button1");
+      }
+
+      if (localStorage.getItem("counter_button2") !== null) {
+        document.getElementById("counter_button2").innerText =
+          localStorage.getItem("counter_button2");
+      }
+
+      function counterPlus(item) {
+        // add 1 to the pressed button
+        item.innerText++;
+
+        // creates an local storage with a key as item id, value as inner text
+        localStorage.setItem(item.id, item.innerText);
+      }
+    </script>
+  </body>
+</html>

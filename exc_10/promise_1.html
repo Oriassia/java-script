@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</head>
+<body>
+<h1>Promise Example</h1>
+<button onclick="onSuccess()">Success</button>
+<button onclick="onFailure()">Failure</button>
+<p id="output"></p>
+
+<script>
+    function createPromise(isSuccess) {
+        return new Promise((resolve, reject) => {
+            if (isSuccess) {
+                setTimeout(() => {
+                    resolve('Success');
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    reject('Failure');
+                }, 1000);
+            }
+        });
+    }
+
+    function onSuccess() {
+        createPromise(true).then((message) => {
+            document.getElementById('output').innerText = message;
+        }).catch((error) => {
+            document.getElementById('output').innerText = error;
+        });
+    }
+
+    function onFailure() {
+        createPromise(false).then((message) => {
+            document.getElementById('output').innerText = message;
+        }).catch((error) => {
+            document.getElementById('output').innerText = error;
+        });
+    }
+</script>
+
+</body>
+</html>

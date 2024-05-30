@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Promise Example</h1>
+
+    <script>
+      const driveToGasStation = new Promise((resolve, reject) => {
+        resolve("Drive to gas station");
+      });
+      const fillTheCar = new Promise((resolve, reject) => {
+        resolve("Fill the car");
+      });
+      const driveToResturant = new Promise((resolve, reject) => {
+        resolve("drive to restaurant");
+      });
+
+      driveToGasStation
+        .then((message) => {
+          console.log(message);
+          return fillTheCar;
+        })
+        .then((message) => {
+          console.log(message);
+          return driveToResturant;
+        })
+        .then((message) => {
+          console.log(message);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+/* quiz_style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.page-wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.headline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.opening-page {
+  text-align: center;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.questions-page {
+  display: none;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question-headline {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.optional-answers {
+  margin-bottom: 10px;
+}
+
+.optional-answers li {
+  list-style-type: none; /* Remove default list bullet */
+  margin-bottom: 10px; /* Add some space between each answer */
+  border: 2px solid #007bff; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  padding: 10px; /* Add padding */
+  background-color: #f0f0f0; /* Add background color */
+  color: #333; /* Set text color */
+  cursor: pointer; /* Add cursor pointer */
+  transition: background-color 0.3s, color 0.3s; /* Add transition */
+}
+
+/* Add hover effect */
+.optional-answers li:hover {
+  background-color: #007bff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}

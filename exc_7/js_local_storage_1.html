@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="insertToStorage()">insert "hello"</button>
+    <button onclick="getStorage()">get polina</button>
+    <button onclick="localStorage.clear()">clear storage</button>
+    <button id="counter_button" onclick="counterPlus()"></button>
+
+    <script>
+      let counterButtonelem = document.querySelector("#counter_button");
+      function insertToStorage() {
+        let x = "hello";
+        localStorage.setItem("polina", x);
+      }
+
+      function getStorage() {
+        console.log(localStorage.getItem("polina"));
+      }
+
+      let counter;
+      if (localStorage.getItem("storageCounter") !== null) {
+        counter = localStorage.getItem("storageCounter");
+      } else {
+        counter = 0;
+      }
+
+      counterButtonelem.textContent = counter;
+
+      function counterPlus() {
+        counter++;
+        counterButtonelem.textContent = counter;
+        localStorage.setItem("storageCounter", counter);
+      }
+    </script>
+  </body>
+</html>

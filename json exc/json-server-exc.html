@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="postToServer()">post data</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+      const url = "http://localhost:8001/posts";
+      const data = {
+        id: "3",
+        title: "another title",
+        views: 300,
+      };
+
+      function postToServer() {
+        axios.post(url, data);
+      }
+    </script>
+  </body>
+</html>

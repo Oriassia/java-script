@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="todo_style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="card-wrapper">
+        <div class="headline-section">
+          <h2>To-do list</h2>
+        </div>
+        <div class="input-section">
+          <input id="task-input" type="text" placeholder="write task here..." />
+        </div>
+        <button id="add-task" onclick="addtask()">Add task</button>
+        <ul class="tasks-list"></ul>
+      </div>
+    </div>
+
+    <!--  -->
+
+    <script>
+      let tasksList = document.querySelector(".tasks-list");
+      let history_array = getArray();
+      loadArray();
+
+      function addtask() {
+        let input_string = document.getElementById("task-input").value;
+        if (input_string != "") {
+          history_array.push(input_string);
+          localStorage.setItem("history-LS", JSON.stringify(history_array));
+
+          let newTaskLine = document.createElement("li");
+          newTaskLine.innerHTML = `<span>${input_string}</span>`;
+          newTaskLine.onclick = function () {
+            doneTask(this);
+          };
+
+          let remove_button = createRemoveButton();
+          newTaskLine.appendChild(remove_button);
+          tasksList.appendChild(newTaskLine);
+
+          document.getElementById("task-input").value = "";
+          console.log(history_array);
+        } else {
+          alert("please insert a task.");
+        }
+      }
+
+      function getArray() {
+        let arrayString = localStorage.getItem("history-LS");
+        if (arrayString) {
+          // Check if arrayString is not null
+          return JSON.parse(arrayString);
+        } else {
+          return []; // Return an empty array if localStorage is empty
+        }
+      }
+
+      function loadArray() {
+        for (let task of history_array) {
+          let newTaskLine = document.createElement("li");
+          newTaskLine.innerHTML = `<span>${task}</span>`;
+
+          let remove_button = createRemoveButton();
+          newTaskLine.appendChild(remove_button);
+          tasksList.appendChild(newTaskLine);
+        }
+      }
+
+      //////////////////
+
+      function removeTask(obj) {
+        let index = history_array.indexOf(obj.querySelector("span").innerText);
+        history_array.splice(index, 1);
+        localStorage.setItem("history-LS", JSON.stringify(history_array));
+
+        obj.remove();
+      }
+
+      function createRemoveButton() {
+        let button = document.createElement("button");
+        button.textContent = "Remove";
+        button.onclick = function () {
+          removeTask(this.parentNode);
+        };
+        return button;
+      }
+
+      function doneTask(item) {
+        if (item.classList.contains("task-done")) {
+          item.classList.remove("task-done");
+        } else {
+          item.classList.add("task-done");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <li></li>
+    <script>
+      function checkEven(array) {
+        return array.some((num) => num % 2 == 0);
+      }
+
+      function evenArray(array) {
+        let evenArray = [];
+
+        while (array.some((num) => num % 2 == 0)) {
+          let evenNum = array.find((num) => num % 2 == 0);
+          evenArray.push(evenNum);
+          array.splice(array.indexOf(evenNum), 1);
+        }
+        return evenArray;
+      }
+
+      function easyEvenArray(array) {
+        return array.filter((num) => num % 2 == 0);
+      }
+
+      console.log(evenArray([0, 4, 5, 9, 6, 3, 6, 22]));
+      console.log(easyEvenArray([0, 4, 5, 9, 6, 3, 6, 22]));
+
+      function showNamesInList(array) {
+        let listElem = document.createElement("ol");
+        document.body.appendChild(listElem);
+        array.map((item) => (listElem.innerHTML += `<li>${item}</li>`));
+      }
+      let namesArray = ["ori", "assia", "paz", "polina"];
+
+      //   showNamesInList(namesArray);
+
+      let listElem = document.createElement("ol");
+      document.body.appendChild(listElem);
+      let elemsArray = namesArray.map((name) => `<li>${name}</li>`);
+      listElem.innerHTML = elemsArray.join("");
+    </script>
+  </body>
+</html>
